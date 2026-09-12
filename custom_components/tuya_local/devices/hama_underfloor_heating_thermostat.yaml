@@ -1,0 +1,71 @@
+# Hama Underfloor Heating Thermostat (product_id xrkdv9ua9nbgx2v8) - eigenes
+# tuya-local Geraeteprofil, bewusst getrennt von hama_radiator_controller.yaml
+# (das ist ein anderer Geraetetyp/andere DPS-Nummern). Herleitung der Werte,
+# Testmethode und offene Punkte: siehe hama_underfloor_heating_thermostat_notes.md
+# (30.8.).
+name: FBH Wandthermostat
+products:
+  - id: xrkdv9ua9nbgx2v8
+    manufacturer: Hama
+entities:
+  - entity: climate
+    translation_only_key: heater
+    dps:
+      - id: 1
+        name: hvac_mode
+        type: boolean
+        mapping:
+          - dps_val: true
+            value: "heat_cool"
+          - dps_val: false
+            value: "off"
+      - id: 3
+        name: current_temperature
+        type: integer
+        mapping:
+          - scale: 10
+      - id: 2
+        name: temperature
+        type: integer
+        unit: C
+        range:
+          min: 50
+          max: 500
+        mapping:
+          - scale: 10
+            step: 5
+  - entity: switch
+    name: Antifreeze
+    category: config
+    dps:
+      - id: 138
+        name: switch
+        type: boolean
+  - entity: switch
+    name: Waterproof Scale
+    category: config
+    dps:
+      - id: 139
+        name: switch
+        type: boolean
+  - entity: switch
+    name: Key
+    category: config
+    dps:
+      - id: 136
+        name: switch
+        type: boolean
+  - entity: switch
+    name: Time Auto
+    category: config
+    dps:
+      - id: 133
+        name: switch
+        type: boolean
+  - entity: switch
+    name: Window
+    category: config
+    dps:
+      - id: 137
+        name: switch
+        type: boolean
