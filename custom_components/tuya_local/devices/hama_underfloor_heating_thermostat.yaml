@@ -1,8 +1,3 @@
-# Hama Underfloor Heating Thermostat (product_id xrkdv9ua9nbgx2v8) - eigenes
-# tuya-local Geraeteprofil, bewusst getrennt von hama_radiator_controller.yaml
-# (das ist ein anderer Geraetetyp/andere DPS-Nummern). Herleitung der Werte,
-# Testmethode und offene Punkte: siehe hama_underfloor_heating_thermostat_notes.md
-# (30.8.).
 name: FBH Wandthermostat
 products:
   - id: xrkdv9ua9nbgx2v8
